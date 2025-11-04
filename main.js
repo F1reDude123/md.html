@@ -25,7 +25,6 @@ class MDReader {
             activeB = true;
           }
         }
-
         else if (e == "_") {
           if (activeI) {
             newStr.push("</i>");
