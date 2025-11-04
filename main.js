@@ -15,22 +15,26 @@ class MDReader {
         newStr.push(e);
       }
       else {
-        if (activeB) {
-          newStr.push("</b>");
-          activeB = false;
-        }
-        else {
-          newStr.push("<b>");
-          activeB = true;
+        if (e == "*") {
+          if (activeB) {
+            newStr.push("</b>");
+            activeB = false;
+          }
+          else {
+            newStr.push("<b>");
+            activeB = true;
+          }
         }
 
-        if (activeI) {
-          newStr.push("</i>");
-          activeI = false;
-        }
-        else {
-          newStr.push("<i>");
-          activeI = true;
+        else if (e == "_") {
+          if (activeI) {
+            newStr.push("</i>");
+            activeI = false;
+          }
+          else {
+            newStr.push("<i>");
+            activeI = true;
+          }
         }
       }
     });
