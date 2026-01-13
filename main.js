@@ -11,11 +11,11 @@ class MDReader {
     });
     
     strArr.forEach(e => {
-      if (e != "[b]" && e != "[i]") {
+      if (e != "#" && e != "$") {
         newStr.push(e);
       }
       else {
-        if (e == "[b]") {
+        if (e == "#") {
           if (activeB) {
             newStr.push("</b>");
             activeB = false;
@@ -25,7 +25,7 @@ class MDReader {
             activeB = true;
           }
         }
-        else if (e == "[i]") {
+        else if (e == "$") {
           if (activeI) {
             newStr.push("</i>");
             activeI = false;
